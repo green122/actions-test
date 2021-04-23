@@ -23,5 +23,9 @@ jobs:
         continue-on-error: true
 
       - uses: cakeinpanic/russian-roulette@master
+        with:
+          slack-token: ${{ secrets.SLACK_TOKEN}}
+          slack-channel: ${{ secrets.SLACK_CHANNEL_ID}}
+          fixers: UAL871MGQ,U01UFQAHDQE,U01UURVTHDJ,U01V0E30AQH,U01VBJ26QFJ
 
 
