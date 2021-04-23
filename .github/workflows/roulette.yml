@@ -1,0 +1,26 @@
+name: Test roulette
+
+on:
+  schedule:
+    - cron: '* 10 * * *'
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 12.0
+
+      - name: Install dependenciess
+        run: npm ci
+
+      - run: npm run test:metadata
+
+      - uses: cakeinpanic/russian-roulette@master
+
+
