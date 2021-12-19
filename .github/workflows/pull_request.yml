@@ -18,5 +18,6 @@ jobs:
       - name: Install dependenciess
         run: npm ci
 
-      - run: npm test
+      - name: Build
+        run: npm run build
 
